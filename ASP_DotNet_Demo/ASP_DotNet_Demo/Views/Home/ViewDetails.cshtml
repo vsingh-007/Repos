@@ -1,0 +1,59 @@
+﻿@model IEnumerable<ASP_DotNet_Demo.Models.Customer>
+@{
+    ViewBag.Title = "ViewDetails";
+}
+<h2>Customers Detail</h2>
+
+<table border="1" cellpadding="2" cellspacing="2" width="1300" height="200">
+    <tr>
+        @*<th>
+            @Html.DisplayNameFor(model => model.ID)
+        </th>*@
+        <th>
+            @Html.DisplayNameFor(model => model.Name)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Gender)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.DOB)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Address)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Email)
+        </th>
+    </tr>
+    @foreach (var item in Model)
+    {
+<tr>
+    @*<td>
+            @Html.DisplayFor(modelItem => item.ID)
+        </td>*@
+    <td>
+        @Html.DisplayFor(modelItem => item.Name)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.Gender)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.DOB)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.Address)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.Email)
+    </td>
+    <td>
+        @Html.ActionLink("Edit", "Edit", new { id = item.ID }) |
+        @Html.ActionLink("Delete", "Delete", new { id = item.ID })
+    </td>
+</tr>
+    }
+
+</table>
+<p>
+    @Html.ActionLink("Add", "Create")
+</p>

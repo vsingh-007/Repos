@@ -1,0 +1,14 @@
+﻿@model EmployeeManagementSystem.Models.Employee
+@{
+    ViewBag.Title = "Delete";
+}
+
+<h2>Are you sure you want to delete this employee?</h2>
+
+@Html.LabelFor(model => model.EmpId) : <span id="EmpId">@Html.DisplayNameFor(model => model.EmpId)</span>
+@Html.LabelFor(model => model.EmpName) : <span id="EmpName">@Html.DisplayNameFor(model => model.EmpName)</span>
+@Html.LabelFor(model => model.Job) : <span id="Job">@Html.DisplayNameFor(model => model.Job)</span>
+@Html.LabelFor(model => model.Salary) : <span id="Salary">@Html.DisplayNameFor(model => model.Salary)</span>
+@Html.LabelFor(model => model.DeptName) : <span id="DeptName">@Html.DisplayNameFor(model => model.DeptName)</span>
+
+<input id="btnSubmit" type="submit" value="Delete" /> | @Html.ActionLink("Back to List", "Index")

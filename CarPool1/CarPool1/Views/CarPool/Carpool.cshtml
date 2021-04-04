@@ -1,0 +1,70 @@
+﻿@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    @*@Styles.Render("~/Content/css")
+    @Scripts.Render("~/bundles/modernizr")*@
+    <title>Car Pool</title>
+    <style>
+        table {
+            border-collapse: collapse;
+            width: 50%;
+        }
+
+        .tt {
+            width: 50%;
+        }
+
+        .row, .dt {
+            padding: 10px;
+            text-align: center;
+            border-bottom: 1px solid #ddd;
+        }
+
+
+
+        tr:hover {
+            background-color: #f5f5f5;
+        }
+    </style>
+</head>
+
+<body>
+    <form method="post" style="margin: 5% 0 0">
+
+
+        <center>
+            <b>
+                <font color="brown">
+                    <h1>CAR POOLING</h1>
+                    <br />
+                    <br />
+                    <h3>
+                        Search. Book. Travel.
+                    </h3>
+                    <h3>Travel cheaper with our trusted community. </h3>
+                </font>
+            </b>
+            <div>
+                <table class="tt">
+
+                    <tr class="row"><td class="dt"> @Html.ActionLink("Find a Ride", "FindRide", "Carpool")</td></tr>
+
+
+                </table>
+
+                <div><b><font color="brown">@ViewBag.message</font></b></div>
+
+            </div>
+
+        </center>
+
+
+    </form>
+</body>
+</html>

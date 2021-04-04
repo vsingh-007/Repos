@@ -1,0 +1,79 @@
+﻿article, header, footer, aside, section, main {
+    display: block;
+}
+
+article, header, footer, aside, section, main, h1, h2, h3, p {
+    margin: 0;
+    padding: 0;
+}
+
+nav {
+    background-color: darkgrey;
+    padding: 5px;
+    margin-top: 2px;
+    text-align:center;
+}
+
+li a {
+    color: white;
+}
+
+li {
+    display: inline;
+    background-color: #ff6a00;
+    margin-left: 15px;
+    margin-right: 15px;
+    font-weight: bold;
+    font-size: 20px;
+    font-variant: small-caps;
+}
+
+body {
+    max-width: 960px;
+    margin-left: auto;
+    margin-right: auto;
+    background-color: antiquewhite;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    font-size: 15px;
+}
+
+
+section {
+    background-color: tomato;
+    margin-top: 10px;
+    padding: 5px;
+}
+
+article {
+    background-color: white;
+    margin-top: 5px;
+    padding: 10px 15px;
+}
+
+main {
+    width: 640px;
+    margin-bottom: 10px;
+    float: left;
+}
+
+aside {
+    background-color: green;
+    width: 270px;
+    float: right;
+    margin-top: 10px;
+    padding: 20px;
+}
+
+footer {
+    clear: both;
+    background-color: GrayText;
+    color: white;
+    text-align: center;
+}
+
+.banner {
+    background-color: mediumaquamarine;
+    color: white;
+    padding: 10px 20px;
+    text-align: center;
+}

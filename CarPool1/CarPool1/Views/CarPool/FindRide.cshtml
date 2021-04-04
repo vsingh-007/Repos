@@ -1,0 +1,86 @@
+﻿@model CarPool1.Models.Ride
+@{
+                Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    @*@Styles.Render("~/Content/css")
+        @Scripts.Render("~/bundles/modernizr")*@
+    <title>Find Ride</title>
+    <style>
+        tr, td {
+            padding: 8px;
+            text-align: left;
+        }
+
+        h2 {
+            color: brown;
+        }
+    </style>
+</head>
+
+<body style="background-color:darkgray">
+    <form method="post" style="margin: 5% 0 0">
+
+        <center>
+            <div>
+                <h2> Find a Ride</h2>
+                <br />
+                <table>
+                    <tr>
+                        <td>
+                            @Html.Label("Location From")
+
+                        </td>
+                        <td>
+                            @Html.DropDownListFor(m => m.From, (IEnumerable<SelectListItem>)ViewBag.From, "Select From")
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            @Html.Label("Location To")
+                        </td>
+                        <td>
+                            @Html.DropDownListFor(m => m.To, (IEnumerable<SelectListItem>)ViewBag.To, "Select To")
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td>
+                            @Html.Label("Date And Time")
+                        </td>
+                        <td>
+                            @Html.TextBoxFor(m => m.Date)
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            @Html.Label("Number of Seats")
+                        </td>
+                        <td>
+                            @Html.TextBoxFor(m => m.NoofSeats)
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td></td>
+
+                        <td>
+                            <input id="Submit" type="submit" value="Submit" />
+
+                        </td>
+                    </tr>
+                </table>
+                <div><b><font color="brown">@ViewBag.message</font></b></div>
+
+            </div>
+        </center>
+
+
+    </form>
+</body>
+</html>

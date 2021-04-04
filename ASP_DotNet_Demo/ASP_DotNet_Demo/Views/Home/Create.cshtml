@@ -1,0 +1,87 @@
+﻿@model ASP_DotNet_Demo.Models.Customer
+@{
+    ViewBag.Title = "Create";
+}
+
+<script src="~/Scripts/jquery-1.7.1.js"></script>
+<script src="~/Scripts/jquery.validate.js"></script>
+<h2>Customer Detail Form</h2>
+
+@*@using (Html.BeginForm())
+{
+    @Html.ValidationSummary(true)
+    @Html.LabelFor(model => model.Name)
+    @Html.EditorFor(model => model.Name)
+    @Html.ValidationMessageFor(model=>model.Name)
+
+    @Html.LabelFor(model => model.Gender)
+    @Html.TextBoxFor(model => model.Gender)
+    @Html.ValidationMessageFor(model => model.Gender)
+
+    @Html.LabelFor(model => model.DOB)
+    @Html.EditorFor(model => model.DOB)
+    @Html.ValidationMessageFor(model => model.DOB)
+
+    @Html.LabelFor(model => model.Address)
+    @Html.TextBoxFor(model => model.Address)
+    @Html.ValidationMessageFor(model => model.Address)
+
+    @Html.LabelFor(model => model.Email)
+    @Html.TextBoxFor(model => model.Email)
+    @Html.ValidationMessageFor(model => model.Email)
+
+    
+    <input type="submit" value="Save" />
+}*@
+@using (Html.BeginForm())
+    {
+        @Html.ValidationSummary(false)
+        <fieldset>
+            <legend>Form</legend>
+            @Html.HiddenFor(model => model.ID)
+
+            <div class="editor-label">
+                @Html.LabelFor(model => model.Name)
+            </div>
+            <div class="editor-field">
+                @Html.EditorFor(model => model.Name)
+                @Html.ValidationMessage("Name is Required")
+            </div>
+            <div class="editor-label">
+                @Html.LabelFor(model => model.Gender)
+            </div>
+            <div class="editor-field">
+                @Html.DropDownList("Gender", new List<SelectListItem>
+               {
+              new SelectListItem { Text = "Male", Value = "Male"},
+              new SelectListItem { Text = "Female", Value = "Female"},
+              new SelectListItem { Text = "Other", Value = "Other"}
+                }, "Gender")
+                @Html.ValidationMessageFor(model => model.Gender)
+            </div>
+            <div class="editor-label">
+                @Html.LabelFor(model => model.DOB)
+            </div>
+            <div class="editor-field">
+                @Html.EditorFor(model => model.DOB)
+                @Html.ValidationMessageFor(model => model.DOB)
+            </div>
+            <div class="editor-label">
+                @Html.LabelFor(model => model.Address)
+            </div>
+            <div class="editor-field">
+                @Html.EditorFor(model => model.Address)
+                @Html.ValidationMessageFor(model => model.Address)
+            </div>
+            <div class="editor-label">
+                @Html.LabelFor(model => model.Email)
+            </div>
+            <div class="editor-field">
+                @Html.EditorFor(model => model.Email)
+                @Html.ValidationMessageFor(model => model.Email)
+            </div>
+            <p>
+                <input type="submit" value="Save" />
+            </p>
+        </fieldset>
+    }

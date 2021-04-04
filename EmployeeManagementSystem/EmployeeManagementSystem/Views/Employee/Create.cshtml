@@ -1,0 +1,16 @@
+﻿@model EmployeeManagementSystem.Models.Employee
+@{
+    ViewBag.Title = "Create";
+}
+
+<h2>Create New Employee</h2>
+
+@using(Html.BeginForm("Create","Employee",FormMethod.Post))
+{
+    <div>
+        <div>
+            @Html.LabelFor(model => model.EmpName)
+            @Html.EditorFor(model => model.EmpName, new { htmlAttributes = new { id = "Expense_Amount" } })
+        </div>
+    </div>
+}

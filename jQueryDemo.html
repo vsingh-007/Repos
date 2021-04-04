@@ -1,0 +1,59 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+    <script>
+
+        window.onload = function () {
+            alert('Hello');
+        };
+
+        $(document).ready(function () {
+
+            $("body").css("background-color", "pink");
+            $("#btn1").click(function () {
+
+                $("#in1").css("background-color", "yellow");
+                $("#in1").css("color", "red");
+
+            });
+
+            $("#btn2").click(function () {
+
+                $("body").css("background-color", "lightblue");
+
+            });
+
+            $("#btn1").keypress(function () {
+
+                $("#in1").css("background-color", "yellow");
+                $("#in1").css("color", "red");
+                $("body").css("background-color", "lightgreen");
+
+            });
+
+            $("#btn3").click(function () {
+
+                $("#in1").fadeOut("slow");
+                $("#in1").fadeOut("slow");
+                $("body").fadeOut("slow");
+
+            });
+
+        });
+
+    </script>
+</head>
+<body>
+    <div class="container" style="margin-top:50px">
+        <input type="text" id="in1" class="form-control" placeholder="Enter Text Here"/><br/>
+        <button class="btn btn-primary btn-block" id="btn1">Show effect</button>
+        <button class="btn btn-primary btn-block" id="btn2">Change Body Background-Color</button>
+        <button class="btn btn-primary btn-block" id="btn3">Fadout effect</button>
+    </div>
+</body>
+</html>

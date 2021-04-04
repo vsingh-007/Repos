@@ -1,0 +1,31 @@
+@model ExpenseManagement.Models.ExpenseViewModel
+@using (Html.BeginForm("AddExpense", "Expense", FormMethod.Post))
+{
+    <div >
+        <div >
+            @Html.LabelFor(model => model.Expense.ExpenseType)
+            @Html.DropDownListFor(model => model.Expense.ExpenseType, (IEnumerable<SelectListItem>)ViewBag.ExpenseTypes,"Select ExpenseTypes", new { htmlAttributes = new { id="Expense_ExpenseType" } })
+            @Html.ValidationMessageFor(model => model.Expense.ExpenseType, "")
+        </div>
+ <div >
+            @Html.LabelFor(model => model.Expense.Amount)
+            <div >
+                @Html.EditorFor(model => model.Expense.Amount,new { htmlAttributes = new { id="Expense_Amount" } })
+                @Html.ValidationMessageFor(model => model.Expense.Amount, "")
+            </div>
+        </div>
+        <div >
+            @Html.LabelFor(model => model.Expense.DateOfExpense)
+            <div>
+                @Html.EditorFor(model => model.Expense.DateOfExpense,new { htmlAttributes = new { id="Expense_DateOfExpense" } })
+                @Html.ValidationMessageFor(model => model.Expense.DateOfExpense, "")
+            </div>
+        </div>
+        <div >
+            <div >
+                <input type="submit" id="Submit" value="Add Expense"  />
+            </div>
+        </div>
+    </div>
+}
+<div id="1"></div>

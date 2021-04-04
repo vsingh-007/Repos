@@ -1,0 +1,65 @@
+﻿@model CarPool1.Models.Ride
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    @*@Styles.Render("~/Content/css")
+        @Scripts.Render("~/bundles/modernizr")*@
+    <title>Find Ride</title>
+    <style>
+        tr, td {
+            padding: 8px;
+            text-align: left;
+        }
+
+        h2 {
+            color: brown;
+        }
+
+        .row, .dt {
+            padding: 10px;
+            text-align: center;
+            border-bottom: 1px solid #ddd;
+        }
+    </style>
+</head>
+<body style="background-color:darkgray">
+    <center>
+        <div>
+            <h2> Find a Ride</h2>
+            <br />
+
+            <div><b><font color="brown">@ViewBag.message</font></b></div>
+            <div>
+                <table align="center" style="width:65%;" border="1" cellpadding="50" cellspacing="50">
+
+                    <tr class="row"> <td class="dt">Location From</td> <td class="dt">Location To</td> <td class="dt">Date</td> <td class="dt">Phone Number</td> <td class="dt">Car NUmber</td> <td class="dt">Number of Seats</td></tr>
+
+                    @foreach (var ride in ViewBag.RideList)
+                    {
+                        <tr class="row">
+                            <td class="dt">@ride.From </td>
+                            <td class="dt">@ride.To</td>
+                            <td class="dt">@ride.Date</td>
+                            <td class="dt">@ride.PhoneNumber</td>
+                            <td class="dt">@ride.CarNo</td>
+                            <td class="dt">@ride.NoofSeats</td>
+                            <td>@Html.ActionLink("ok", "ConfirmRide", new { carNo = @ride.CarNo })</td>
+                        </tr>
+                    }
+
+                </table>
+            </div>
+
+        </div>
+
+    </center>
+
+
+</body>
+</html>

@@ -1,0 +1,75 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title>jQueryDemo</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+    <script>
+        $(document).ready(function () {
+
+            $("#add").click(function () {
+                var inp1 = $("#inp1").val();
+                var inp2 = $("#inp2").val();
+                var res = parseInt(inp1) + parseInt(inp2);
+                $("#res").val(res);
+
+            });
+            $("#subtract").click(function () {
+                var inp1 = $("#inp1").val();
+                var inp2 = $("#inp2").val();
+                var res = parseInt(inp1) - parseInt(inp2);
+                $("#res").val(res);
+
+            });
+            $("#divide").click(function () {
+                var inp1 = $("#inp1").val();
+                var inp2 = $("#inp2").val();
+                var res = parseInt(inp1) / parseInt(inp2);
+                $("#res").val(res);
+
+            });
+            $("#multiply").click(function () {
+                var inp1 = $("#inp1").val();
+                var inp2 = $("#inp2").val();
+                var res = parseInt(inp1) * parseInt(inp2);
+                $("#res").val(res);
+
+            });
+            $("#reset").click(function () {
+                $("#inp1").val("");
+                $("#inp2").val("");
+                $("#res").val("");
+                $("#inp1").css("background-color", "white");
+                $("#inp2").css("background-color", "white");
+                $("#res").css("background-color", "white");
+
+            });
+            $("#color").click(function () {
+                $("#inp1").css("background-color","yellow");
+                $("#inp2").css("background-color", "yellow");
+                $("#res").css("background-color", "yellow");
+
+            });
+
+        });
+
+    </script>
+</head>
+<body>
+    <form class="container">
+        <div><h2>Calculator</h2></div>
+        Enter First Nnumber :<input type="number" id="inp1" class="form-control" />
+        Enter Second Number :<input type="number" id="inp2" class="form-control" />
+        Result :<input type="text" id="res" class="form-control" />
+        <br>
+        <button type="button" class="btn btn-info" id = "add">Add</button>
+        <button type="button" class="btn btn-info" id="subtract">Subtract</button>
+        <button type="button" class="btn btn-info" id="divide">Divide</button>
+        <button type="button" class="btn btn-info" id="multiply">Multiply</button>
+        <button type="button" class="btn btn-warning" id="color">Color</button>
+        <button type="button" class="btn btn-warning" id="reset">Clear</button>
+    </form>
+</body>
+</html>

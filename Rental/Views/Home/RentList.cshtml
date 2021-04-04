@@ -1,0 +1,72 @@
+﻿@model IEnumerable<Rental.Models.Rent>
+
+@{
+    ViewBag.Title = "RentList";
+}
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<h2>RentList</h2>
+
+<p>
+    @Html.ActionLink("Create New", "RentInsert")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.RentId)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.VehicleType.vehicleType)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.PickupLocation)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.DropLocation)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.PickupDate)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.DropDate)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.PickupTime)
+        </th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.RentId)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.VehicleType.vehicleType)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.PickupLocation)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.DropLocation)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.PickupDate)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.DropDate)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.PickupTime)
+            </td>
+            <td>
+                @Html.ActionLink("Edit", "Edit", new { id = item.RentId }) |
+                @Html.ActionLink("Details", "Details", new { id = item.RentId }) |
+                @Html.ActionLink("Delete", "Delete", new { id = item.RentId })
+            </td>
+        </tr>
+    }
+
+</table>

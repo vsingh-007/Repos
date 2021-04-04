@@ -1,0 +1,91 @@
+﻿<!DOCTYPE HTML>
+<html>
+<head>
+
+    <script type="text/javascript" charset="utf-8">function billCalculation() {
+                alert("Running");
+                var e = getElementByName("conntype");
+                var monthlyRent = e.value;
+                var duration = getElementById("duration");
+                val ele = document.getElementByName("scheme");
+                for (val i=0;i<ele.length;i++) {
+                    if ele[i].checked
+                        val scheme = ele[i].value;
+                };
+                val result = (duration*scheme)+monthlyRent;
+                document.getElementById("result").innerHTML = "The Total Monthly Rental Cost is Rs. "+result;
+            }</script>
+
+    <style type="text/css">
+        body {
+            background-color: #eed426;
+        }
+
+        h1 {
+            color: #006666;
+            font-family: Verdana;
+            text-align: center;
+        }
+
+        table {
+            float: right;
+        }
+
+        table, th, td {
+            border: 1px solid black;
+            text-align: center;
+        }
+    </style>
+
+</head>
+
+<body>
+
+    <form>
+
+        <h1>ACTB Connection Portal</h1>
+        <label for="custname">Customer Name</label>
+        <input type="text" name="custname" id="custname" placeholder="Enter the customer name" pattern="[a-zA-Z]+([\s][a-zA-Z]+)*" required /><br>
+        <label for="email">Customer Email</label>
+        <input type="email" name="email" id="email" pattern="[a-zA-Z0-9]*+@[a-zA-Z0-9]*.[a-zA-Z]*" placeholder="abc@gmail.com" required /><br>
+        <label for="mobile">Telephone/ Mobile Number</label>
+        <input type="tel" name="mobile" id="mobile" pattern="[987][0-9]{9}" placeholder="Enter the Mobile Number" required /><br>
+        <label for="conntype">Connection Type</label>
+        <select id="conntype" required>
+            <option name="Pre" id="Pre" value="70">Pre</option>
+            <option name="Post" id="Post" value="150">Post</option>
+        </select><br>
+        <label required>Scheme Name</label>
+        <input type="radio" name="scheme" id="scheme1" value="200" />
+        <label for="local">Local</label>
+        <input type="radio" name="scheme" id="scheme2" value="350" />
+        <label for="std">STD</label>
+        <input type="radio" name="scheme" id="scheme3" value="500" />
+        <label for="fulltalktime">FullTalkTime</label><br>
+        <label for="duration">Connection Duration</label>
+        <input type="text" name="duration" id="duration" min="1" max="12" required /><br>
+        <input type="submit" name="submit" id="submit" onsubmit="billCalculation();" />
+        <input type="reset" name="clear" id="clear" value="Reset" /><br />
+        <div name="result" id="result"></div>
+        <table name="rentalcost" id="rentalcost">
+            <caption>Rental Cost Table</caption>
+            <tr>
+                <td>Connection Type</td>
+                <td>Call Limit</td>
+                <td>Monthely Rental</td>
+            </tr>
+            <tr>
+                <td>Pre</td>
+                <td>500</td>
+                <td>75</td>
+            </tr>
+            <tr>
+                <td>Post</td>
+                <td>Unlimited</td>
+                <td>150</td>
+            </tr>
+        </table>
+    </form>
+</body>
+</html>
+

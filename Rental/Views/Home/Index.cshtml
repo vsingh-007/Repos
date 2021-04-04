@@ -1,0 +1,36 @@
+﻿@model IEnumerable<Rental.Models.VehicleType>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Insert")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.VehicleTypeId)
+        </th>
+        <th>@Html.DisplayNameFor(model => model.vehicleType)</th>
+        <th>Action</th>
+    </tr>
+
+@*@foreach (var item in Model) {
+<tr>
+    <td>
+        @Html.DisplayFor(modelItem => item.VehicleTypeId)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.vehicleType)
+    </td>
+    <td>
+        @Html.ActionLink("Edit", "Update", new { id = item.VehicleTypeId })
+
+    </td>
+</tr>
+}*@
+
+</table>

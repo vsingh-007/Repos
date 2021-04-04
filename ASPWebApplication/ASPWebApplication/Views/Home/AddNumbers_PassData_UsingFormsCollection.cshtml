@@ -1,0 +1,21 @@
+﻿@{
+    ViewBag.Title = "AddNumbers_PassData_UsingFormsCollection";
+}
+
+<h2>AddNumbers_PassData_UsingFormsCollection Result</h2>
+
+@{ if (ViewBag.result != null)
+    {
+        <b> Result is : </b> @ViewBag.result
+    }
+    else
+    {
+        <form method="post">
+            Enter No 1 : <input type="number" name="txtNo1" />
+            <br />
+            Enter No 2 : <input type="number" name="txtNo2" />
+            <br />
+            <button type="submit"> Add </button>
+        </form> 
+    }
+}

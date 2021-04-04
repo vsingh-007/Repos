@@ -1,0 +1,58 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title>jQueryDemo</title>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <script type="text/javascript">
+        function add()
+        {
+        var no1 = parseInt(document.getElementById("inp1").value);
+        var no2 = parseInt(document.getElementById("inp2").value);
+        document.getElementById("res").value=(no1+no2);}
+        function subtract()
+        {
+        var no1 = parseInt(document.getElementById("inp1").value);
+        var no2 = parseInt(document.getElementById("inp2").value);
+        document.getElementById("res").value= (no1-no2);}
+        function divide()
+        {
+        var no1 = parseInt(document.getElementById("inp1").value);
+        var no2 = parseInt(document.getElementById("inp2").value);
+        document.getElementById("res").value= (no1/no2);}
+        function multiply()
+        {
+        var no1 = parseInt(document.getElementById("inp1").value);
+        var no2 = parseInt(document.getElementById("inp2").value);
+        document.getElementById("res").value= (no1*no2);}
+
+        function color()
+        {document.getElementById("inp1").style.background = "yellow";
+        document.getElementById("inp2").style.background = "yellow";
+        document.getElementById("res").style.background = "yellow";}
+
+        function reset()
+        {document.getElementById("inp1").reset();
+        document.getElementById("inp2").reset();
+        document.getElementById("res").reset();
+        }
+    </script>
+</head>
+<body>
+    <form class="container">
+        <div><h2>Calculator</h2></div>
+        Enter First Nnumber :<input type="number" id="inp1" class="form-control" />
+        Enter Second Number :<input type="number" id="inp2" class="form-control" />
+        Result :<input type="text" id="res" class="form-control" />
+        <br>
+        <button type="button" class="btn btn-info" onclick="add()">Add</button>
+        <button type="button" class="btn btn-info" onclick="subtract()">Subtract</button>
+        <button type="button" class="btn btn-info" onclick="divide()">Divide</button>
+        <button type="button" class="btn btn-info" onclick="multiply()">Multiply</button>
+        <button type="button" class="btn btn-warning" onclick="color()">Color</button>
+        <button type="button" class="btn btn-warning" onclick="reset()">Clear</button>
+    </form>
+</body>
+</html>
